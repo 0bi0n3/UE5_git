@@ -2,31 +2,17 @@
 
 int main()
 {
-    double numberPi = 3.14159;
-    double numberE = 2.718281828;
-
-    int count = 0;
-
-    bool Condition = true;
-
-    do 
+    
+    for (int i = 0; i <= 5; i++)
     {
-        std::cout << "The number of Pi is: " << numberPi << std::endl;
-        std::cout << "The Number e is: " << numberE << std::endl;
-        std::cout << "Count: " << count << std::endl;
-        std::cout << "Pi + e*count = " << numberPi + numberE * count << std::endl;
-
-        count++;
-        if (count <= 100)
+        for (int j = 0; j <= 5; j++)
         {
-            Condition = true;
+            for (int k = 0; k <= 5; k++)
+            {
+                std::cout << "i = " << i << " , j = " << j << " , k = " << k << std::endl;
+            }
         }
-        else
-        {
-            Condition = false;
-        }
-       
-    } while (Condition);
+    }
 
     std::cin.get();
 }
