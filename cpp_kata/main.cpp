@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 
 int MyFunction(int param_one, int param_two);
 
@@ -19,3 +19,4 @@ int MyFunction(int param_one, int param_two)
 	std::cout << "The local variable is " << local_variable << std::endl;
 	return local_variable;
 }
+*/
