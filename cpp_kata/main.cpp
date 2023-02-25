@@ -1,23 +1,21 @@
 #include <iostream>
 
+int MyFunction(int param_one, int param_two);
+
 int main()
 {
+	int var_in_main = MyFunction(2, 3);
+	int Another_var = MyFunction(var_in_main, 4);
+	MyFunction(var_in_main, Another_var);
 
-	int a{ 2 };
-	int b{ 5 };
-
-	if (a == b)
-	{
-		std::cout << "The variable A is equal to variable B!" << std::endl;
-	}
-	if (a > b)
-	{
-		std::cout << "A is larger than A!" << std::endl;
-	}
-	else
-	{
-		std::cout << "A is not equal to B nor is it larger..." << std::endl;
-	}
 
 	std::cin.get();
+}
+
+int MyFunction(int param_one, int param_two)
+{
+	int local_variable;
+	local_variable = param_one + param_two;
+	std::cout << "The local variable is " << local_variable << std::endl;
+	return local_variable;
 }
