@@ -2,24 +2,25 @@
 //
 
 #include <iostream>
+#include <string>
 
-void plusOne(int& num)
-{
-    num++;
-}
+void ChangeCharacterClass(std::string& ccc);
 
 int main()
 {
-    // Declare and output number.
-    int a{ 1 };
+    std::string characterClass = "Druid";
 
-    std::cout << a << std::endl;
+    ChangeCharacterClass(characterClass);
 
-    // Call function and add one by reference.
-    plusOne(a);
+    std::cout << characterClass << std::endl;
+    
 
-    std::cout << a << std::endl;
 
     std::cin.get();
 
+}
+
+void ChangeCharacterClass(std::string& ccc)
+{
+    ccc += "!";
 }
