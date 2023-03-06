@@ -4,12 +4,22 @@
 #include <iostream>
 #include <string>
 
+struct locationVec
+{
+    float Xpos;
+    float Ypos;
+    float Zpos;
+};
+
+
 struct Player
 {
     int Level;
     float Health;
     float Mana;
     float Damage;
+
+    locationVec location = { 0.f, 0.f,0.f };
     
     void takeDamage(float dmg)
     {
@@ -29,6 +39,13 @@ struct Player
         return Level;
     }
 
+    void displayLocation()
+    {
+        std::cout << "Location X = " << location.Xpos << std::endl;
+        std::cout << "Location Y = " << location.Ypos << std::endl;
+        std::cout << "Location Z = " << location.Zpos << std::endl;
+    }
+
 };
 
 int main()
@@ -41,7 +58,17 @@ int main()
     playerOne.Mana = 120.f;
 
     std::cout << "Player's level is: " << playerOne.getLevel() << std::endl;
+
+    playerOne.takeDamage(15.f);
+
+    std::cout << "Player takes " << 15.f << " damage!" << std::endl;
+    std::cout << "Player's health is now " << playerOne.Health << std::endl;
    
+    playerOne.displayLocation();
+
+    Player playerTwo = { 15, 375.f, 54.f, 30.f, {17.f, 34.f,69.f} };
+
+    playerTwo.displayLocation();
 
     std::cin.get();
 }
