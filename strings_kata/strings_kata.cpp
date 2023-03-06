@@ -13,6 +13,15 @@ int main()
     std::cout << myCString << std::endl;
     std::cout << myCPPString << std::endl;
 
+        int i = 1;
+    int j = 2;
+    int k = 3;
+
+    if (i <= k && i < j)
+    {
+        std::cout << "This will be printed!" << std::endl;
+    }
+
 
     std::cin.get();
 }
