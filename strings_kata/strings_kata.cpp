@@ -13,7 +13,7 @@ int main()
     std::cout << myCString << std::endl;
     std::cout << myCPPString << std::endl;
 
-        int i = 1;
+    int i = 1;
     int j = 2;
     int k = 3;
 
