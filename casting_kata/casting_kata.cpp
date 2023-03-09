@@ -2,44 +2,25 @@
 //
 
 #include <iostream>
-//------------------------------------------------------------
-// Classes.
-class Object
-{
-public:
-    virtual void beginPlay();
+#include "Object.h"
+#include "Actor.h"
+#include "Pawn.h"
 
-    void objectFunction()
-    {
-        std::cout << "Object function called!\n\n";
-    }
-};
-
-class Actor : public Object
-{
-public:
-    virtual void beginPlay() override;
-
-    void actorFunction()
-    {
-        std::cout << "Actor function called!\n\n";
-    }
-};
-
-class Pawn : public Actor
-{
-public:
-    virtual void beginPlay() override;
-
-    void pawnFunction()
-    {
-        std::cout << "Pawn function called!\n\n";
-    }
-};
+void InheritanceFunction();
 
 //------------------------------------------------------------
 // Main body.
 int main()
+{
+    InheritanceFunction();
+
+    std::cin.get();
+}
+
+//------------------------------------------------------------
+// Definitions.
+
+void InheritanceFunction()
 {
     Object* obj = new Object;
     //obj->beginPlay();
@@ -80,23 +61,4 @@ int main()
     delete obj;
     delete actor;
     delete pwn;
-
-    std::cin.get();
-}
-
-//------------------------------------------------------------
-// Definitions.
-void Object::beginPlay()
-{
-    std::cout << "Object beingPlay() called!\n" << std::endl;
-}
-
-void Actor::beginPlay()
-{
-    std::cout << "Actor beingPlay() called!\n" << std::endl;
-}
-
-void Pawn::beginPlay()
-{
-    std::cout << "Pawn beingPlay() called!\n" << std::endl;
 }
