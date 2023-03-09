@@ -8,18 +8,33 @@ class Object
 {
 public:
     virtual void beginPlay();
+
+    void objectFunction()
+    {
+        std::cout << "Object function called!\n\n";
+    }
 };
 
 class Actor : public Object
 {
 public:
     virtual void beginPlay() override;
+
+    void actorFunction()
+    {
+        std::cout << "Actor function called!\n\n";
+    }
 };
 
 class Pawn : public Actor
 {
 public:
     virtual void beginPlay() override;
+
+    void pawnFunction()
+    {
+        std::cout << "Pawn function called!\n\n";
+    }
 };
 
 //------------------------------------------------------------
@@ -40,6 +55,25 @@ int main()
     for (int i = 0; i < 3; i++)
     {
         ObjectArray[i]->beginPlay();
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        Object* ptr2obj = ObjectArray[i];
+
+        Actor* ptr2act = dynamic_cast<Actor*>(ptr2obj);
+
+        if (ptr2act)
+        {
+            ptr2act->actorFunction();
+        }
+
+        Pawn* ptr2pwn = dynamic_cast<Pawn*>(ptr2obj);
+
+        if (ptr2pwn)
+        {
+            ptr2pwn->pawnFunction();
+        }
     }
 
 
