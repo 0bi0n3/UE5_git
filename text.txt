@@ -1,1 +1,9 @@
-inital commitm  message
+// Initial commit message.
+
+#include <iostream>
+
+int main()
+{
+
+	std::cout << "Main message!" << std::endl;
+}
